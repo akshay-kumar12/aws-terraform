@@ -15,8 +15,14 @@ If MAC users have homebrew installed on their machine: Just do: brew install ter
 
 
 **2.** Extract the zip file
+
+
 **3.** You will see the terraform binary executable file
+
+
 **4.** make sure that the terraform binary is available on the PATH.
+
+
 For Mac/Linux. On the shell/terminal, go to the folder where terraform binary is extracted
 
 
@@ -27,7 +33,11 @@ For Windows users : follow this to add Terraform to PATH https://stackoverflow.c
 If Windows users have chocolatey installed on their machine: Just do: choco install -y terraform Go to step 5 Click here for instructions to install chocolatey.
 
 **5.** make a new directory(can be named anything) and go inside the directory
+
+
 mkdir terraform-july && cd terraform-july
+
+
 **6.** Paste this following code to a file called ec2.tf( can be anything.tf)
 
 **minimal viable configuration**
@@ -45,7 +55,12 @@ resource "aws_instance" "example" {
 
 
 **Note:**
+
+
 Replace the access_key and secret_access with your AWS IAM user credentials with enough permissions attached. You can go to IAM console on AWS to do this. First, go to the IAM management console iam
+
+![image](https://user-images.githubusercontent.com/32329984/109605590-64de8380-7b4b-11eb-9fdb-3539f674565f.png)
+
 
 Then Click on the user's name and navigate to the security credentials tab. Click create access keys iam
 
@@ -54,16 +69,27 @@ Either download the csv file or, click show keys. Now you have both the access_k
 If you've setup the AWS CLI and have credentials stored , you may skip the credential portion. This is what Hashicorp says "If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials. This option is much cleaner for situations where tf files are checked into source control"
 
 **7.** initialize the working directory for terraform
+
+
 terraform init
+
 "The terraform init command is used to initialize a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. It is safe to run this command multiple times."
+
 
 **8.** Provision the ec2 with this command
 
+
 terraform apply
+
 
 **9.** Login to the AWS management console and navigate to the EC2 management console. Check if the instance got provisioned
 
+
+
 **10.** From your terminal/command prompt/ shell , destroy the resources
 
+
 terraform destroy
+
+
 That's it! you installed Terraform and used it to provision an EC2 instance.
